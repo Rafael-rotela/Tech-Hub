@@ -20,7 +20,7 @@ O projeto foi construído utilizando o ecossistema JavaScript:
 
 - **Linguagem:** [JavaScript (ES6+)](https://mozilla.org)
 - **Front-end:** HTML5, CSS3 / Flexbox / Grid Layout
-- **Ambiente/Ferramentas (Opcional - remova o que não usar):** [Node.js](https://nodejs.org) / npm
+- **Ambiente/Ferramentas:** [Node.js](https://nodejs.org) / npm
 
 ## ⚙️ Como Rodar o Projeto
 
@@ -46,14 +46,18 @@ Antes de começar, você vai precisar ter instalado:
 # basta abrir o arquivo 'index.html' diretamente ou usar a extensão Live Server do VS Code.
 
 # (Caso use Node.js/npm, descomente as linhas abaixo):
-# \$ npm install
-# \$ npm start
+ \$ npm install
+ \$ npm start
 ```
 
-## 🧑‍💻 Autor
+## 🧑‍💻 Autores
 
-Desenvolvido com 💙 por **Seu Nome**! 👋 Entre em contato comigo:
+ Rafael
+- **LinkedIn:** ([https://linkedin.com](https://www.linkedin.com/in/rafael-rotela-0986b1356/))
+- **E-mail:** [seu.email@exemplo.com](rjvrafael22@gmail.com)
+- **GitHub:** ([https://github.com](https://github.com/Rafael-rotela))
 
+Gih
 - **LinkedIn:** [Acesse meu perfil](https://linkedin.com)
 - **E-mail:** [seu.email@exemplo.com](mailto:seu.email@exemplo.com)
 - **GitHub:** [@seu-usuario](https://github.com)
