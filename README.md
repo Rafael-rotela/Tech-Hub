@@ -1,63 +1,137 @@
 # Tech-Hub
 
-> Um sistema de e-commerce completo focado no comércio de produtos de tecnologia, desenvolvido inteiramente em JavaScript.
+> Um e-commerce completo de produtos de tecnologia, construído com **React + Vite** no front-end, **Next.js** no back-end e **MySQL + Prisma** na camada de dados.
 
 ---
 
 ## 💻 Sobre o Projeto
 
-O **Tech-Hub** é uma plataforma de e-commerce moderna criada para simular a experiência real de compra e venda de eletrônicos e produtos de tecnologia. O projeto foi desenvolvido para consolidar conhecimentos em JavaScript, abordando desde a manipulação dinâmica da interface até o gerenciamento de estados da aplicação.
+O **Tech-Hub** é uma plataforma de e-commerce moderna criada para simular a experiência real de compra e venda de eletrônicos e produtos de tecnologia. O projeto tem como objetivo consolidar conhecimentos em desenvolvimento full stack com JavaScript/TypeScript, abordando desde a construção de interfaces reativas até a modelagem de banco de dados e a criação de APIs.
 
 ### 🌟 Funcionalidades Principais
-- 🛒 **Carrinho de Compras:** Adicionar, remover e atualizar a quantidade de produtos em tempo real.
-- 🔍 **Filtro de Produtos:** Busca inteligente por categorias, preços e especificações técnicas.
-- 💳 **Simulação de Checkout:** Fluxo completo de finalização de pedido de ponta a ponta.
-- 📱 **Design Responsivo:** Interface otimizada para computadores, tablets e celulares.
+
+- 🛒 **Carrinho de Compras:** adicionar, remover e atualizar a quantidade de produtos em tempo real.
+- 🔍 **Filtro de Produtos:** busca por categorias, preços e especificações técnicas.
+- 👤 **Autenticação de Usuários:** cadastro, login e área do cliente.
+- 📦 **Gestão de Produtos e Pedidos:** catálogo, estoque e histórico de pedidos persistidos no banco.
+- 💳 **Simulação de Checkout:** fluxo completo de finalização de pedido de ponta a ponta.
+- 📱 **Design Responsivo:** interface otimizada para computadores, tablets e celulares.
 
 ## 🛠️ Tecnologias Utilizadas
 
-O projeto foi construído utilizando o ecossistema JavaScript:
+| Camada | Tecnologia |
+| --- | --- |
+| **Front-end** | [React](https://react.dev) + [Vite](https://vite.dev) |
+| **Back-end / API** | [Next.js](https://nextjs.org) (Route Handlers) |
+| **Banco de Dados** | [MySQL](https://www.mysql.com) |
+| **ORM** | [Prisma](https://www.prisma.io) |
+| **Ambiente / Ferramentas** | [Node.js](https://nodejs.org), npm, Git |
 
-- **Linguagem:** [JavaScript (ES6+)](https://mozilla.org)
-- **Front-end:** HTML5, CSS3 / Flexbox / Grid Layout
-- **Ambiente/Ferramentas:** [Node.js](https://nodejs.org) / npm
+## 📁 Estrutura do Projeto
+
+```
+Tech-Hub/
+├── frontend/          # Aplicação React + Vite (interface da loja)
+│   ├── src/
+│   └── package.json
+├── backend/           # Aplicação Next.js (API do e-commerce)
+│   ├── app/api/       # Rotas da API
+│   ├── prisma/
+│   │   └── schema.prisma
+│   └── package.json
+└── README.md
+```
 
 ## ⚙️ Como Rodar o Projeto
 
-Siga os passos abaixo para clonar o repositório e executar o e-commerce localmente na sua máquina.
-
 ### 📋 Pré-requisitos
+
 Antes de começar, você vai precisar ter instalado:
+
 - [Git](https://git-scm.com)
-- Um navegador web moderno (Chrome, Edge, Firefox, etc.)
-- *Opcional:* [Node.js](https://nodejs.org) (caso use algum servidor local ou npm)
+- [Node.js](https://nodejs.org) (versão 20 ou superior) e npm
+- [MySQL](https://dev.mysql.com/downloads/) (versão 8 ou superior) rodando localmente ou em um servidor acessível
 
 ### 🚀 Passos para Execução
 
 ```bash
-# 1. Clone este repositório para a sua máquina
-\$ git clone https://github.com
+# 1. Clone este repositório
+git clone https://github.com/Rafael-rotela/Tech-Hub.git
 
 # 2. Acesse a pasta do projeto
-\$ cd Tech-Hub
+cd Tech-Hub
+```
 
-# 3. Abra o projeto no navegador
-# Se for um projeto puramente de front-end (HTML/JS tradicional), 
-# basta abrir o arquivo 'index.html' diretamente ou usar a extensão Live Server do VS Code.
+#### 🗄️ Back-end (Next.js + Prisma)
 
-# (Caso use Node.js/npm, descomente as linhas abaixo):
- \$ npm install
- \$ npm start
+```bash
+# 3. Acesse a pasta do back-end e instale as dependências
+cd backend
+npm install
+
+# 4. Crie o arquivo de variáveis de ambiente
+cp .env.example .env
+```
+
+Configure a conexão com o MySQL no arquivo `.env`:
+
+```env
+DATABASE_URL="mysql://USUARIO:SENHA@localhost:3306/techhub"
+```
+
+```bash
+# 5. Gere o Prisma Client e aplique as migrations no banco
+npx prisma generate
+npx prisma migrate dev
+
+# 6. Inicie o servidor do back-end (http://localhost:3000)
+npm run dev
+```
+
+#### 🎨 Front-end (React + Vite)
+
+Em outro terminal:
+
+```bash
+# 7. Acesse a pasta do front-end e instale as dependências
+cd frontend
+npm install
+
+# 8. Crie o arquivo de variáveis de ambiente
+cp .env.example .env
+```
+
+Configure a URL da API no arquivo `.env`:
+
+```env
+VITE_API_URL="http://localhost:3000/api"
+```
+
+```bash
+# 9. Inicie o front-end (http://localhost:5173)
+npm run dev
+```
+
+### 🧰 Comandos Úteis do Prisma
+
+```bash
+npx prisma studio            # Interface visual para explorar o banco
+npx prisma migrate dev       # Cria e aplica uma nova migration
+npx prisma db seed           # Popula o banco com dados iniciais (se configurado)
 ```
 
 ## 🧑‍💻 Autores
 
- Rafael
-- **LinkedIn:** ([https://linkedin.com](https://www.linkedin.com/in/rafael-rotela-0986b1356/))
-- **E-mail:** [seu.email@exemplo.com](rjvrafael22@gmail.com)
-- **GitHub:** ([https://github.com](https://github.com/Rafael-rotela))
+**Rafael**
+- **LinkedIn:** [Rafael Rotela](https://www.linkedin.com/in/rafael-rotela-0986b1356/)
+- **E-mail:** [rjvrafael22@gmail.com](mailto:rjvrafael22@gmail.com)
+- **GitHub:** [@Rafael-rotela](https://github.com/Rafael-rotela)
 
-Gih
+**Gih**
 - **LinkedIn:** [Acesse meu perfil](https://linkedin.com)
 - **E-mail:** [seu.email@exemplo.com](mailto:seu.email@exemplo.com)
 - **GitHub:** [@seu-usuario](https://github.com)
+
+## 📄 Licença
+
+Este projeto está sob a licença descrita no arquivo [LICENSE](LICENSE).
